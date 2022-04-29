@@ -1,0 +1,48 @@
+.Checkout {
+
+  & .Container{
+    width: 100%;
+    height: 2rem;
+    display: flex;
+  }
+
+  & .item {
+    flex-grow: 1;
+    height: 0.5rem;
+    background-color: var(--secondary-base-color);
+    margin-top: 1rem;
+  }
+  
+  & #firstItem {
+    width: 32%;
+    height: 0.5rem;
+    background-color: var(--secondary-base-color);    
+    margin-top: 1rem;
+  }
+  
+  & #lastItem {
+    width: 32%;
+    height: 0.5rem;
+    background-color: var(--secondary-base-color);
+    margin-top: 1rem;
+  }
+  
+  & .index {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: white !important ;
+    background-color: rgb(241, 241, 235);
+    border: 2px solid;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+  }
+  
+  & .text {
+    margin: 1rem 0rem 0;
+    color: rgb(241, 241, 235);
+  }
+  
+}
