@@ -42,13 +42,16 @@ export default class ProgressBar extends PureComponent {
   }
 
   render() {
-    const { steps, checkoutStep, color } = this.props;
-    const { title = '' } = steps[checkoutStep];
-    let newUrl = title
-    newUrl = newUrl.split(" ")[0]
-    let result = newUrl[0].toUpperCase() + newUrl.substring(1);
+    const { steps, checkoutStep } = this.props;
+
     const { checkOut } = this.state;
 
+    const stepNames = Object.values(steps).map((item) => {
+      let newUrl = item.title
+      newUrl = newUrl.split(" ")[0]
+      let result = newUrl[0].toUpperCase() + newUrl.substring(1);
+      return result
+    })
 
     return (
       <div className='ProgressBar' >
@@ -59,7 +62,7 @@ export default class ProgressBar extends PureComponent {
                 <div className='ProgressBar__firstItem__bar' ></div>
                 < div >
                   <div className='ProgressBar__firstItem__index' >{index + 1} </div>
-                  <div className='ProgressBar__firstItem__text' >{result}</div>
+                  <div className='ProgressBar__firstItem__text' >{stepNames[0]}</div>
                 </div>
               </div>
             )
@@ -71,7 +74,7 @@ export default class ProgressBar extends PureComponent {
                 <div className={this.changeTheme(index, "bar")} ></div>
                 <div>
                   <div className={this.changeTheme(index, "index")} >{index + 1} </div>
-                  <div className={this.changeTheme(index, null)} >{result}</div>
+                  <div className={this.changeTheme(index, null)} >{stepNames[index]}</div>
                 </div>
               </div>
             )
