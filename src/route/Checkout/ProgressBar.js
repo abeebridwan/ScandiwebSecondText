@@ -15,17 +15,24 @@ export default class ProgressBar extends PureComponent {
     let changeTheme;
     if (element === "bar") {
       changeTheme = checkOut >= index ? "ProgressBar__middleItem__bar-active" : "ProgressBar__middleItem__bar"
+      if (index === checkOut + 1) { return (`${changeTheme} ProgressBar__middleItem__bar-animate`) }
+
     } else if (element == "index") {
       changeTheme = checkOut >= index ? "ProgressBar__middleItem__index-active" : "ProgressBar__middleItem__index"
+      if (index === checkOut + 1) { return (`${changeTheme} ProgressBar__middleItem__index-animate`) }
+
     } else {
       changeTheme = checkOut >= index ? "ProgressBar__middleItem__text-active" : "ProgressBar__middleItem__text"
     }
+
     return changeTheme
   }
   lastTheme(array) {
     const { checkOut } = this.state;
 
     let changeTheme = checkOut === array.length - 1 ? "ProgressBar__lastItem-active" : "ProgressBar__lastItem"
+    if (array.length - 1 === checkOut + 1) { return (`${changeTheme} ProgressBar__lastItem-animate`) }
+
     return changeTheme
   }
   generateKey = (pre, index) => {

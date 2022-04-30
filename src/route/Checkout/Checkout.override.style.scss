@@ -55,7 +55,6 @@
         height: 0.5rem;
         background-color: var(--secondary-base-color);    
         margin-top: 1rem;
-        animation: animate-loading 2s linear infinite alternate;
       }
       &__index {
         display: flex;
@@ -67,8 +66,7 @@
         background-color: var(--secondary-base-color);
         border: 2px solid var(--secondary-base-color);
         border-radius: 50%;
-        margin: 0 0.5rem;
-        animation: animate-loading 2s linear infinite alternate;
+        margin: 0 0.5rem;        
       }
       &__text {
         position: absolute;
@@ -103,6 +101,12 @@
         color: inherit;
         white-space: nowrap;
       }
+      &__bar-animate{
+        animation: animate-loading 2s linear infinite alternate;        
+      }
+      &__index-animate{
+        animation: animate-loading 2s linear infinite alternate;        
+      }      
     }
 
     &__lastItem{
@@ -110,7 +114,6 @@
       height: 0.5rem;
       background-color: var(--secondary-base-color);
       margin-top: 1rem;   
-      animation: animate-loading 2s linear infinite alternate;
     }     
     
     &__lastItem-active{
@@ -119,5 +122,8 @@
       background-color: var(--primary-base-color);
       margin-top: 1rem;
     }
+    &__lastItem-animate{
+      animation: animate-loading 2s linear infinite alternate;        
+    }  
   } 
 }
