@@ -13,12 +13,14 @@
     width: 100%;
     height: 2rem;
     display: flex;
+    justify-content: space-evenly;
     margin: 3rem 0;
 
     &__firstItem {
       position: relative;
       display: flex;
-      width: 32%;
+      flex-grow: 1;
+
       &__bar {
         width: 100%;
         height: 0.5rem;
@@ -47,9 +49,10 @@
     }
 
     &__middleItem{
-      flex-grow: 1;
       display: flex;
       position: relative;
+      flex-grow: 1;
+
       &__bar {
         width: 100%;
         height: 0.5rem;
@@ -110,17 +113,18 @@
     }
 
     &__lastItem{
-      width: 32%;
       height: 0.5rem;
       background-color: var(--secondary-base-color);
-      margin-top: 1rem;   
+      margin-top: 1rem;  
+      flex-grow: 1;
+
     }     
     
     &__lastItem-active{
-      width: 32%;
       height: 0.5rem;
       background-color: var(--primary-base-color);
       margin-top: 1rem;
+      flex-grow: 1;
     }
     &__lastItem-animate{
       animation: animate-loading 2s linear infinite alternate;        
