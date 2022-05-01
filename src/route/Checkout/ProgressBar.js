@@ -22,7 +22,7 @@ export default class ProgressBar extends PureComponent {
       if (index === checkOut + 1) { return (`${changeTheme} ProgressBar__middleItem__index-animate`) }
 
     } else {
-      changeTheme = checkOut >= index ? "ProgressBar__middleItem__text-active" : "ProgressBar__middleItem__text"
+      changeTheme = checkOut >= index ? "ProgressBar__middleItem__index__text-active" : "ProgressBar__middleItem__index__text"
     }
 
     return changeTheme
@@ -68,8 +68,10 @@ export default class ProgressBar extends PureComponent {
               <div className='ProgressBar__firstItem' key={this.generateKey("firstItem", index)}>
                 <div className='ProgressBar__firstItem__bar' ></div>
                 < div >
-                  <div className='ProgressBar__firstItem__index' >{index + 1} </div>
-                  <div className='ProgressBar__firstItem__text' >{stepNames[0]}</div>
+                  <div className='ProgressBar__firstItem__index' >{index + 1}
+
+                    <div className='ProgressBar__firstItem__index__text' >{stepNames[0]}</div>
+                  </div>
                 </div>
               </div>
             )
@@ -80,8 +82,9 @@ export default class ProgressBar extends PureComponent {
               <div className='ProgressBar__middleItem' key={this.generateKey("item", index)}>
                 <div className={this.changeTheme(index, "bar")} ></div>
                 <div>
-                  <div className={this.changeTheme(index, "index")} >{index + 1} </div>
-                  <div className={this.changeTheme(index, null)} >{stepNames[index]}</div>
+                  <div className={this.changeTheme(index, "index")} >{index + 1}
+                    <div className={this.changeTheme(index, null)} >{stepNames[index]}</div>
+                  </div>
                 </div>
               </div>
             )
