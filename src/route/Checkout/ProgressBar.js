@@ -62,7 +62,7 @@ export default class ProgressBar extends PureComponent {
 
     return (
       <div className='ProgressBar' >
-        {Object.keys(steps).map((elem, index, array) => {
+        {[1, 2, 3, 4, 5].map((elem, index, array) => {
           if (index === 0) {
             return (
               <div className='ProgressBar__firstItem' key={this.generateKey("firstItem", index)}>
